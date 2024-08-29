@@ -7,7 +7,7 @@ const tagsData = require('./data.json')
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views')) 
 // kegunaan code di atas untuk tidak error saat dipanggil diluar folder
-app.use(express,static(path.join(__dirname, '/public')))
+// app.use(express,static(path.join(__dirname, '/public')))
 
 
 app.get('/', (req, res) => {
@@ -24,13 +24,13 @@ app.get('/t/:tag', (req, res) => {
     }
 })
 
-app.get('/humans', (req, res ) => {
-    const humans = [
-        'Acep',
-        'Tatang',
-        'Hemawan'
+app.get('/animals', (req, res ) => {
+    const animals = [
+        'anjing',
+        'tongket',
+        'harimau'
     ]
-    res.render('humans', { humans })
+    res.render('animals', { animals })
 })
 
 app.get('/rand', (req, res) => {
