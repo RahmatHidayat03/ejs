@@ -7,7 +7,7 @@ const tagsData = require('./data.json')
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views')) 
 // kegunaan code di atas untuk tidak error saat dipanggil diluar folder
-// app.use(express,static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 app.get('/', (req, res) => {
